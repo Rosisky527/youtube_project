@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>History</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2 style="padding:10px;">History</h2>
+<div id="videos" class="videos"></div>
+
+<script>
+let history = JSON.parse(localStorage.getItem("history")) || [];
+let container = document.getElementById("videos");
+
+history.forEach(v => {
+  container.innerHTML += `
+    <div class="card">
+      <img src="${v.thumbnail}">
+      <p>${v.title}</p>
+    </div>
+  `;
+});
+</script>
+
+</body>
+</html>
